@@ -1,34 +1,34 @@
 package com.myprojectstructure.SeleniumLabs;
 
+import org.openqa.selenium.PageLoadStrategy;
+import org.openqa.selenium.Proxy;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 
-public class SeleniumLab05 {
+public class SeleniumLab06 {
     public static void main(String[] args) {
 
 
         EdgeOptions edgeOptions = new EdgeOptions();
-        /*
-         * 1. headless
-         * 2. start max
-         * 3. window
-         * 4. add exnetions
-         * 5. 100 of another options - you can use with it
-         *
-         * */
+        edgeOptions.setPageLoadStrategy(PageLoadStrategy.NONE);
 
-        //edgeOptions.addArguments("--start-maximized");
-        edgeOptions.addArguments("--window-size=800,600");
-        //edgeOptions.addArguments("--incognito");
-        EdgeDriver driver = new EdgeDriver(edgeOptions); // Dynamic Dispatch -> Runtime Poly
+        Proxy proxy = new Proxy();
+        proxy.setHttpProxy("121.40.185.42:1080");
+        edgeOptions.setCapability("proxy", proxy);
+
+        WebDriver driver = new EdgeDriver(edgeOptions);
+
+
+
+
         driver.get("https://sdet.live");
         System.out.println(driver.getTitle());
-
-
-        //driver.manage().window().maximize();
-
         driver.quit();
 
+        // NONE -> 0.5 ms
+        // EAGER - 1
+        // NORMAL  - 5-7 Seconds
 
     }
 }

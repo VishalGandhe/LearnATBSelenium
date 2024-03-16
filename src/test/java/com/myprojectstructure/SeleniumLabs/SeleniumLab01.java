@@ -1,4 +1,4 @@
-package SeleniumLabs;
+package com.myprojectstructure.SeleniumLabs;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;

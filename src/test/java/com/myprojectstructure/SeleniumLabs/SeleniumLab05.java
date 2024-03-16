@@ -1,23 +1,35 @@
 package com.myprojectstructure.SeleniumLabs;
 
-public class SeleniumLab04
-{
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+
+public class SeleniumLab05 {
     public static void main(String[] args) {
-        // If you are using Selenium < 4.6 or selenium 3.14
-
-        // System.setProperty("webdriver.edge.driver", "path/to/msedgedriver.exe");
-//        // Firefox
-//        System.setProperty("webdriver.gecko.driver", "path/to/geckodriver.exe");
-//        // Chrome
-//        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
-//        // IE
-//        System.setProperty("webdriver.ie.driver", "path/to/IEDriverServer.exe");
-//        // Safari
-//        System.setProperty("webdriver.safari.driver", "path/to/safaridriver");
 
 
-        // Selenium 4.x - Selenium Manager - will automatically download the Drivers all
-        // when needed when you start the Selenium server.
+        EdgeOptions edgeOptions = new EdgeOptions();
+        /*
+         * 1. headless
+         * 2. start max
+         * 3. window
+         * 4. add exnetions
+         * 5. 100 of another options - you can use with it
+         *
+         * */
+
+        //edgeOptions.addArguments("--start-maximized");
+        edgeOptions.addArguments("--window-size=800,600");
+        //edgeOptions.addArguments("--incognito");
+        EdgeDriver driver = new EdgeDriver(edgeOptions); // Dynamic Dispatch -> Runtime Poly
+        driver.get("https://sdet.live");
+        System.out.println(driver.getTitle());
+
+
+        //driver.manage().window().maximize();
+
+        driver.quit();
+
 
     }
 }
+
