@@ -1,5 +1,8 @@
 package com.myprojectstructure.SeleniumLabs;
 
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
 import java.net.MalformedURLException;
@@ -19,6 +22,24 @@ public class SeleniumLab09 {
         driver.navigate().refresh();
 
 
+
+    }
+
+    public static class Lab02 {
+        //Switch to a specific window out of 100 windows and validate it
+
+        public static void main(String[] args) {
+
+
+            WebDriver driver = new ChromeDriver();
+            driver.get("https://www.w3schools.com/icons/");
+            driver.findElement(By.xpath("//span[contains(@class,\"fa fa-youtube \")]")).click();
+            driver.findElement(By.xpath("//span[contains(@class,\"fa fa-linkedin\")]")).click();
+            driver.findElement(By.xpath("//span[contains(@class,\"fa fa-facebook\")]")).click();
+            driver.findElement(By.xpath("//span[contains(@class,\"fa fa-instagram \")]")).click();
+
+
+        }
 
     }
 }

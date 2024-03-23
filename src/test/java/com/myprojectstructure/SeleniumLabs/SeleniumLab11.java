@@ -1,11 +1,11 @@
+package com.myprojectstructure.SeleniumLabs;
 
 import io.qameta.allure.Description;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
 import org.testng.annotations.Test;
 
-public class TC02
+public class SeleniumLab11
 {
     @Test
     @Description("Verify thee tile of TestTestingAcademy")
